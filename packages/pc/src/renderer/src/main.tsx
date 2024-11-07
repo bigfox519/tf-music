@@ -1,4 +1,5 @@
-import './assets/style.css'
+// import './assets/style.css'
+import 'normalize.css'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'

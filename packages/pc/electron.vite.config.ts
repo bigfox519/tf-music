@@ -2,9 +2,7 @@ import { resolve } from 'path'
 import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
 import react from '@vitejs/plugin-react'
 
-import autoprefixer from 'autoprefixer'
-import tailwindcss from 'tailwindcss'
-import pxtoviewport from 'postcss-px-to-viewport'
+import postcssPresetEnv from 'postcss-preset-env'
 
 export default defineConfig({
   main: {
@@ -16,13 +14,7 @@ export default defineConfig({
   renderer: {
     css: {
       postcss: {
-        plugins: [
-          tailwindcss(),
-          autoprefixer(),
-          pxtoviewport({
-            viewportWidth: 1920
-          })
-        ]
+        plugins: [postcssPresetEnv({ stage: 3 })]
       }
     },
     resolve: {
